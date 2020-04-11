@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/cabeceraAcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#033076"
+        android:text="Acerca de"></TextView>
+
+    <ImageView
+        android:id="@+id/imagenAcercaDe"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_weight="0.40"
+        android:background="#FAFAFA" />
+
+    <TextView
+        android:id="@+id/informacionAcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="370dp"
+        android:text="CriptoWorld, 2020"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/informacion2AcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="400dp"
+        android:text="Desarrollado por Manuel Cepero Sánchez"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
+
+</RelativeLayout>
