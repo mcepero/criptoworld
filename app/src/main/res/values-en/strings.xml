@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cripto</string>
+    <string name="criptomonedas">Cryptocurrencies</string>
+    <string name="guardadas">Saved cryptocurrencies</string>
+    <string name="acercaDe">About</string>
+    <string name="desarrolladoPor">Developed by Manuel Cepero Sánchez</string>
+    <string name="pais">Country: </string>
+    <string name="volumen">Volume: </string>
+    <string name="ano">Foundation year: </string>
+    <string name="precio">Price: </string>
+    <string name="volumen24h">24h volume: </string>
+    <string name="capital">Market capital: </string>
+    <string name="cambio24h">24h change: </string>
+    <string name="cambio7d">7 days change: </string>
+    <string name="cambio1a">1 year change: </string>
+    <string name="cantidad">Quantity: </string>
+    <string name="favoritos">Add to favorites</string>
+    <string name="cantidadComprada">Bought quantity: </string>
+    <string name="valorCantidadComprada">Value of the bought quantity: </string>
+</resources>
