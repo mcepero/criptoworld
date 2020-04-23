@@ -50,7 +50,6 @@ public class ExchangeDetallesFragment extends Fragment {
         final TextView nombre = view.findViewById(R.id.nombreDetallesExchange);
         final TextView pais = view.findViewById(R.id.paisDetallesExchange);
         final TextView volumen = view.findViewById(R.id.volumenDetallesExchange);
-        final TextView ano = view.findViewById(R.id.anoDetallesExchange);
         final TextView url = view.findViewById(R.id.urlDetallesExchange);
         if (!url.getText().toString().equals("null"))
             url.setMovementMethod(LinkMovementMethod.getInstance());
@@ -59,9 +58,8 @@ public class ExchangeDetallesFragment extends Fragment {
         if (!e.getImagen().isEmpty())
             Picasso.get().load(e.getImagen()).into(imagen);
         nombre.setText(e.getNombre());
-        volumen.setText("Volumen en 24h: " + e.getVolumen() + "€");
-        pais.setText("País: " + e.getPais());
-        ano.setText("Año de fundación: " + e.getAnoFundacion());
+        volumen.setText(volumen.getText() + " " + e.getVolumen() + "€");
+        pais.setText(pais.getText() + " " + e.getPais());
         url.setText("URL: " + e.getUrl());
 
         url.setOnClickListener(new View.OnClickListener() {

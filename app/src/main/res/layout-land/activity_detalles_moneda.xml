@@ -27,14 +27,15 @@
                 android:layout_width="158dp"
                 android:layout_height="159dp"
                 android:layout_marginLeft="290dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/precioDetallesMoneda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Precio: 0€"
+                android:text="@string/precio"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -43,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Volumen en 24h: 0€"
+                android:text="@string/volumen24h"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -52,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Capital de mercado: 0€"
+                android:text="@string/capital"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -61,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 24h: 0%"
+                android:text="@string/cambio24h"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -70,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 7 días: 0%"
+                android:text="@string/cambio7d"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -79,27 +80,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 1 año: 0%"
+                android:text="@string/cambio1a"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/introducir_cantidad_texto"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Cantidad: "
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
 
-            <EditText
-                android:id="@+id/introducir_cantidad"
-                android:layout_width="205dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/introducir_cantidad_texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="0.5"
+                    android:text="@string/cantidad"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/introducir_cantidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:hint="@string/cantidad"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    android:layout_marginRight="5dp"/>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/agregarFavoritos"
@@ -108,7 +119,8 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Añadir a favoritos" />
+                android:gravity="center"
+                android:text="@string/favoritos" />
         </LinearLayout>
     </ScrollView>
 

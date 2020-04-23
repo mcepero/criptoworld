@@ -8,12 +8,12 @@
         android:id="@+id/cabecera"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:textSize="30dp"
         android:layout_marginTop="10dp"
-        android:textStyle="bold"
+        android:text="@string/criptomonedas"
+        android:textAlignment="center"
         android:textColor="#033076"
-        android:text="Criptomonedas"></TextView>
+        android:textSize="30dp"
+        android:textStyle="bold"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

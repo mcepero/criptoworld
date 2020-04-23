@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.manuelcepero.cripto.R;
 import com.squareup.picasso.Picasso;
@@ -69,8 +70,17 @@ public class CriptomonedasDetallesFragment extends Fragment implements Serializa
             @Override
             public void onClick(View v) {
                 final EditText cantidad = view.findViewById(R.id.introducir_cantidad);
-                c.setPrecio_introducido(Double.parseDouble(cantidad.getText().toString()));
-                new CriptomonedasDetallesFragment.InsertTask(CriptomonedasDetallesFragment.this, c).execute();
+                if (!cantidad.getText().toString().isEmpty()) {
+                    c.setPrecio_introducido(Double.parseDouble(cantidad.getText().toString()));
+
+                    new InsertTask(CriptomonedasDetallesFragment.this, c).execute();
+
+                    Toast toast = Toast.makeText(getActivity(), "Criptomoneda añadida", Toast.LENGTH_SHORT);
+                    toast.show();
+                }else{
+                    Toast toast = Toast.makeText(getActivity(), "La cantidad no puede estar vacía", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
        return view;
@@ -86,17 +96,19 @@ public class CriptomonedasDetallesFragment extends Fragment implements Serializa
         final TextView cambio1d = view.findViewById(R.id.cambio24h);
         final TextView cambio7d = view.findViewById(R.id.cambio7d);
         final TextView cambio1y = view.findViewById(R.id.cambio1y);
+        final TextView cantidad = view.findViewById(R.id.introducir_cantidad_texto);
+        final EditText cantidadIntroducida = view.findViewById(R.id.introducir_cantidad);
 
         if (!c.getImagen_large().isEmpty())
             Picasso.get().load(c.getImagen_large()).into(imagen);
         nombre.setText(c.getNombre());
-        precio.setText("Precio: " + c.getPrecioActual() + "€");
-        volumen.setText("Volumen en 24h: " + c.getVolumen() + "€");
-        capital.setText("Capital de mercado: " + c.getCapital() + "€");
-        cambio1d.setText("Cambio 24h: " + c.getCambio24h() + "%");
-        cambio7d.setText("Cambio 7 días: " + c.getCambio7d() + "%");
-        cambio1y.setText("Cambio 1 año: " + c.getCambio1ano() + "%");
-
+        precio.setText(precio.getText() + " " + c.getPrecioActual() + "€");
+        volumen.setText(volumen.getText() + " " + c.getVolumen() + "€");
+        capital.setText(capital.getText() + " " + c.getCapital() + "€");
+        cambio1d.setText(cambio1d.getText() + " " + c.getCambio24h() + "%");
+        cambio7d.setText(cambio7d.getText()+ " " + c.getCambio7d() + "%");
+        cambio1y.setText(cambio1y.getText() + " " + c.getCambio1ano() + "%");
+        cantidad.setText(cantidad.getText() + "("+ c.getAbreviatura() + "): ");
     }
 
 
@@ -107,9 +119,14 @@ public class CriptomonedasDetallesFragment extends Fragment implements Serializa
 
     @Override
     public long addCripto(Criptomoneda criptomoneda) {
-
         return 0;
     }
+
+    @Override
+    public int deleteCripto(Criptomoneda criptomoneda) {
+        return 0;
+    }
+
 
     private static class InsertTask extends AsyncTask<Void, Void, Boolean> {
 
@@ -129,13 +146,6 @@ public class CriptomonedasDetallesFragment extends Fragment implements Serializa
                 e.getMessage();
             }
             return true;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean bool) {
-            if (bool) {
-
-            }
         }
     }
 }

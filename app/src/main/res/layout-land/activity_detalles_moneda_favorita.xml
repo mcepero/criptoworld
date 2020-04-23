@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Precio: 0€"
+                android:text="@string/precio"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Volumen en 24h: 0€"
+                android:text="@string/volumen24h"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Capital de mercado: 0€"
+                android:text="@string/capital"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 24h: 0%"
+                android:text="@string/cambio24h"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 7 días: 0%"
+                android:text="@string/cambio7d"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cambio 1 año: 0%"
+                android:text="@string/cambio1a"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Cantidad comprada: 0"
+                android:text="@string/cantidadComprada"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -99,9 +99,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Valor de la cantidad comprada: 0€"
+                android:text="@string/valorCantidadComprada"
                 android:textAlignment="center"
                 android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/eliminar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/eliminarFavorita" />
 
         </LinearLayout>
     </ScrollView>

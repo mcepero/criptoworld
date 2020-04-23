@@ -1,14 +1,22 @@
 package activities.criptomonedas;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.manuelcepero.cripto.R;
 
+import java.lang.ref.WeakReference;
+
+import activities.MainActivity;
+import activities.SplashActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import model.Criptomoneda;
 
-public class CriptomonedasActivity extends AppCompatActivity implements View.OnClickListener{
+public class CriptomonedasActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(Bundle savedInstance){
@@ -21,10 +29,9 @@ public class CriptomonedasActivity extends AppCompatActivity implements View.OnC
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.contenedor, criptomonedasFragment);
         transaction.commit();
-    }
 
-    @Override
-    public void onClick(View view) {
-
+        Intent intent = new Intent(CriptomonedasActivity.this, SplashActivity.class);
+        intent.putExtra("milisegundos", 5500);
+        startActivity(intent);
     }
 }

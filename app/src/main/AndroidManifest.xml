@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:configChanges="orientation"
             android:name="activities.MainActivity">
@@ -17,30 +17,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.CriptomonedaActivity">
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.CriptomonedaDetallesActivity">
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.CriptomonedasFavoritasActivity">
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.ExchangesActivity">
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.CriptomonedaFavoritaDetalles">
-        </activity>
-        <activity
-            android:configChanges="orientation"
-            android:name="nada.ExchangeDetallesActivity">
         </activity>
         <activity
             android:configChanges="orientation"
@@ -57,6 +33,10 @@
         <activity
             android:configChanges="orientation"
             android:name="activities.AcercaDe">
+        </activity>
+        <activity
+            android:name="activities.SplashActivity"
+            android:configChanges="orientation">
         </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

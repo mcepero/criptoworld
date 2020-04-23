@@ -8,12 +8,12 @@
         android:id="@+id/cabeceraAcercaDe"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
         android:layout_marginTop="10dp"
-        android:textStyle="bold"
+        android:text="@string/acercaDe"
+        android:textAlignment="center"
         android:textColor="#033076"
-        android:text="Acerca de"></TextView>
+        android:textSize="30dp"
+        android:textStyle="bold"></TextView>
 
     <ImageView
         android:id="@+id/imagenAcercaDe"
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="400dp"
-        android:text="Desarrollado por Manuel Cepero Sánchez"
+        android:text="@string/desarrolladoPor"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20dp"

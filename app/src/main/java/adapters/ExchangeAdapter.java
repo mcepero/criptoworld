@@ -45,7 +45,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.ViewHo
     public void onBindViewHolder(@NonNull ExchangeAdapter.ViewHolder holder, int position) {
         Exchange exchange = listaExchanges.get(position);
         holder.nombre.setText(exchange.getNombre());
-        holder.pais.setText("País: " + exchange.getPais());
+        holder.pais.setText(exchange.getPais());
         if(!exchange.getImagen().isEmpty())
             Picasso.get().load(exchange.getImagen()).into(holder.imagen);
     }

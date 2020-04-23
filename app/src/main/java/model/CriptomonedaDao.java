@@ -21,4 +21,10 @@ public interface CriptomonedaDao {
 
     @Insert
     public long addCripto(Criptomoneda criptomoneda);
+
+    @Delete
+    public int deleteCripto(Criptomoneda criptomoneda);
+
+   /* @Query("SELECT id FROM criptomonedas WHERE id=:id")
+    long findMonedaById(long id);*/
 }

@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Pais: "
+                android:text="@string/pais"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -45,16 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Volumen: "
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/anoDetallesExchange"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Año de fundación: "
+                android:text="@string/volumen"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 

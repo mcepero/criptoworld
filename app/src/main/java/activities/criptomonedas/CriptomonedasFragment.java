@@ -1,5 +1,6 @@
 package activities.criptomonedas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import activities.SplashActivity;
 import adapters.CriptomonedaAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,7 +33,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import model.Criptomoneda;
 import viewmodel.CriptomonedaViewModel;
 
-public class CriptomonedasFragment extends Fragment implements View.OnClickListener {
+public class CriptomonedasFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private CriptomonedaAdapter adapter;
@@ -39,6 +41,7 @@ public class CriptomonedasFragment extends Fragment implements View.OnClickListe
     private ArrayList<Criptomoneda> listaMonedas;
     private RequestQueue mRequestQueue;
     private View view;
+    SplashActivity splashActivity;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,12 +60,12 @@ public class CriptomonedasFragment extends Fragment implements View.OnClickListe
 
         adapter = new CriptomonedaAdapter(getContext(), listaMonedas);
         recyclerView.setAdapter(adapter);
-
         return view;
     }
 
     private void parseJSONn() {
-        String url = "https://api.coingecko.com/api/v3/coins";
+        //String url = "https://api.coingecko.com/api/v3/coins";
+        String url = "https://api.coingecko.com/api/v3/coins?vs_currency=usd&order=market_cap_desc&per_page=200&page=1";
         JsonArrayRequest request = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -94,14 +97,12 @@ public class CriptomonedasFragment extends Fragment implements View.OnClickListe
                         String imagen_small = image.getString("small");
                         String imagen_large = image.getString("large");
 
-                        Criptomoneda c = new Criptomoneda(id, 0, nombreCompleto, nombreAbreviado, euro, cambio1d, cambio7d, cambio1y, volumeEuro, capitalEuro, imagen_small, imagen_large,0);
+                        Criptomoneda c = new Criptomoneda(id, i, nombreCompleto, nombreAbreviado, euro, cambio1d, cambio7d, cambio1y, volumeEuro, capitalEuro, imagen_small, imagen_large,0);
                         listaMonedas.add(c);
-
                     }
 
                     adapter = new CriptomonedaAdapter(getContext(), listaMonedas);
                     recyclerView.setAdapter(adapter);
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -115,8 +116,4 @@ public class CriptomonedasFragment extends Fragment implements View.OnClickListe
         mRequestQueue.add(request);
     }
 
-    @Override
-    public void onClick(View view) {
-
-    }
 }

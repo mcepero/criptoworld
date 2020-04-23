@@ -37,14 +37,28 @@
                 android:textAlignment="center"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/precioMoneda"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:background="#e3f2fd"
-                android:text="Precio"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="0.30">
+                <TextView
+                    android:id="@+id/precioMonedaTexto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="#e3f2fd"
+                    android:gravity="right"
+                    android:text="@string/precio" />
+
+                <TextView
+                    android:id="@+id/precioMoneda"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="#e3f2fd"
+                    android:gravity="left" />
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -52,7 +52,7 @@ public class CriptomonedaFavoritaAdapter extends RecyclerView.Adapter<Criptomone
     public void onBindViewHolder(@NonNull CriptomonedaFavoritaAdapter.ViewHolder holder, int position) {
         Criptomoneda moneda = listaMonedas.get(position);
         holder.nombre.setText(moneda.getNombre() + " (" + moneda.getAbreviatura()+ ")");
-        holder.precio.setText("Precio: " + moneda.getPrecioActual() + "€");
+        holder.precio.setText(holder.precio.getText() + " " + moneda.getPrecioActual() + "€");
         if(!moneda.getImagenSmall().isEmpty())
             Picasso.get().load(moneda.getImagen_large()).into(holder.imagen);
     }

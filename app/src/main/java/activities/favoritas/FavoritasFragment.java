@@ -1,6 +1,7 @@
 package activities.favoritas;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.example.manuelcepero.cripto.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import activities.SplashActivity;
 import adapters.CriptomonedaFavoritaAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

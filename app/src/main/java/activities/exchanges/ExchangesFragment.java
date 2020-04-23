@@ -1,9 +1,11 @@
 package activities.exchanges;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import activities.SplashActivity;
 import adapters.ExchangeAdapter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

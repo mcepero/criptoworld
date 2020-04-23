@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.manuelcepero.cripto.R;
 import com.squareup.picasso.Picasso;
@@ -19,6 +21,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
 import model.AppDatabase;
 import model.Criptomoneda;
@@ -46,6 +49,18 @@ public class FavoritasDetallesFragment extends Fragment implements CriptomonedaD
         appDatabase = AppDatabase.getInstance(getContext());
 
         anadirDatos();
+
+        final Button eliminar = view.findViewById(R.id.eliminar);
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new FavoritasDetallesFragment.DeleteTask(FavoritasDetallesFragment.this, c).execute();
+                FavoritasFragment favoritasFragment = new FavoritasFragment();
+
+                Toast toast = Toast.makeText(getActivity(), "Criptomoneda eliminada", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
 
         return view;
     }
@@ -90,12 +105,18 @@ public class FavoritasDetallesFragment extends Fragment implements CriptomonedaD
         return 0;
     }
 
-    private static class InsertTask extends AsyncTask<Void, Void, Boolean> {
+    @Override
+    public int deleteCripto(Criptomoneda criptomoneda) {
+        return 0;
+    }
+
+
+    private static class DeleteTask extends AsyncTask<Void, Void, Boolean> {
 
         private WeakReference<FavoritasDetallesFragment> activityReference;
         private Criptomoneda criptomoneda;
 
-        InsertTask(FavoritasDetallesFragment context, Criptomoneda criptomoneda) {
+        DeleteTask(FavoritasDetallesFragment context, Criptomoneda criptomoneda) {
             activityReference = new WeakReference<>(context);
             this.criptomoneda = criptomoneda;
         }
@@ -103,18 +124,11 @@ public class FavoritasDetallesFragment extends Fragment implements CriptomonedaD
         @Override
         protected Boolean doInBackground(Void... objs) {
             try {
-                activityReference.get().appDatabase.monedaDAO().addCripto(criptomoneda);
+                activityReference.get().appDatabase.monedaDAO().deleteCripto(criptomoneda);
             }catch (Exception e){
                 e.getMessage();
             }
             return true;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean bool) {
-            if (bool) {
-
-            }
         }
     }
 }

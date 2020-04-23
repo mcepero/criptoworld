@@ -1,7 +1,22 @@
 <resources>
-    <string name="app_name">Cripto</string>
+    <string name="app_name">CriptoWorld</string>
     <string name="criptomonedas">Criptomonedas</string>
+    <string name="guardadas">Criptomonedas guardadas</string>
+    <string name="acercaDe">Acerca de</string>
+    <string name="desarrolladoPor">Desarrollado por Manuel Cepero Sánchez</string>
+    <string name="pais">País: </string>
+    <string name="volumen">Volumen: </string>
+    <string name="ano">Año de fundación: </string>
+    <string name="precio">Precio: </string>
+    <string name="volumen24h">Volumen en 24h: </string>
+    <string name="capital">Capital de mercado: </string>
+    <string name="cambio24h">Cambio 24h: </string>
+    <string name="cambio7d">Cambio 7 días: </string>
+    <string name="cambio1a">Cambio 1 año: </string>
+    <string name="cantidad">Cantidad </string>
+    <string name="favoritos">Añadir a favoritos</string>
+    <string name="cantidadComprada">Cantidad comprada: </string>
+    <string name="valorCantidadComprada">Valor de la cantidad comprada: </string>
+    <string name="eliminarFavorita">Eliminar favorita</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
