@@ -29,6 +29,7 @@
             android:background="@drawable/button_bordes"
             android:text="@string/criptomonedas"
             android:textColor="#0A1142"
+            android:layout_marginTop="50dp"
             android:textSize="24sp">
 
         </Button>
@@ -37,7 +38,7 @@
             android:id="@+id/exchanges"
             android:layout_width="260dp"
             android:layout_height="85dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/button_bordes"
             android:text="Exchanges"
             android:textColor="#0A1142"
@@ -49,7 +50,7 @@
             android:id="@+id/guardadas"
             android:layout_width="260dp"
             android:layout_height="85dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/button_bordes"
             android:text="@string/guardadas"
             android:textColor="#0A1142"
@@ -59,7 +60,7 @@
             android:id="@+id/acercade"
             android:layout_width="260dp"
             android:layout_height="85dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/button_bordes"
             android:text="@string/acercaDe"
             android:textColor="#0A1142"
