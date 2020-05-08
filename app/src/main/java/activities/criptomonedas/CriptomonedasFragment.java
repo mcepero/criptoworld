@@ -65,7 +65,7 @@ public class CriptomonedasFragment extends Fragment {
 
     private void parseJSONn() {
         //String url = "https://api.coingecko.com/api/v3/coins";
-        String url = "https://api.coingecko.com/api/v3/coins?vs_currency=usd&order=market_cap_desc&per_page=200&page=1";
+        String url = "https://api.coingecko.com/api/v3/coins";//?vs_currency=usd&order=market_cap_desc&per_page=200&page=1";
         JsonArrayRequest request = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
