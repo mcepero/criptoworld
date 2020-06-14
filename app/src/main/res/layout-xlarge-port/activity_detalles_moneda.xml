@@ -117,11 +117,10 @@
                 android:id="@+id/agregarFavoritos"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:textSize="20sp"
-                android:gravity="center"
                 android:text="@string/favoritos" />
         </LinearLayout>
     </ScrollView>

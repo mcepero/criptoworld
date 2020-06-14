@@ -1,6 +1,5 @@
 package activities.criptomonedas;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -42,6 +41,7 @@ public class CriptomonedasFragment extends Fragment {
     private RequestQueue mRequestQueue;
     private View view;
     SplashActivity splashActivity;
+    CriptomonedaViewModel model;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,16 +56,23 @@ public class CriptomonedasFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
-        parseJSONn();
+        parseJSON();
+
+        model = ViewModelProviders.of(this).get(CriptomonedaViewModel.class);
+        model.getMonedas().observe(getViewLifecycleOwner(), new Observer<List<Criptomoneda>>() {
+            @Override
+            public void onChanged(List<Criptomoneda> criptomonedas) {
+                adapter.addMonedas((ArrayList<Criptomoneda>) criptomonedas);
+            }
+        });
 
         adapter = new CriptomonedaAdapter(getContext(), listaMonedas);
         recyclerView.setAdapter(adapter);
         return view;
     }
 
-    private void parseJSONn() {
-        //String url = "https://api.coingecko.com/api/v3/coins";
-        String url = "https://api.coingecko.com/api/v3/coins";//?vs_currency=usd&order=market_cap_desc&per_page=200&page=1";
+    private void parseJSON() {
+        String url = "https://api.coingecko.com/api/v3/coins";
         JsonArrayRequest request = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {

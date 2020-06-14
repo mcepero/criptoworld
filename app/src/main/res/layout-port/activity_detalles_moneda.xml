@@ -26,10 +26,10 @@
 
             <ImageView
                 android:id="@+id/imagenDetallesMoneda"
-                android:layout_width="158dp"
-                android:layout_height="159dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="125dp"/>
+                android:layout_width="159dp"
+                android:layout_height="159dp"/>
 
             <TextView
                 android:id="@+id/precioDetallesMoneda"
@@ -117,10 +117,9 @@
                 android:id="@+id/agregarFavoritos"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/favoritos" />
         </LinearLayout>
     </ScrollView>
