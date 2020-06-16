@@ -94,7 +94,7 @@ public class CriptomonedaFavoritaAdapter extends RecyclerView.Adapter<Criptomone
 
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
 
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, favoritasDetallesFragment).addToBackStack(null).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragmentos, favoritasDetallesFragment).addToBackStack(null).commit();
                 }
             });
         }

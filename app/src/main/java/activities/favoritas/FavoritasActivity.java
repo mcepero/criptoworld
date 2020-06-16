@@ -7,7 +7,6 @@ import android.view.View;
 import com.example.manuelcepero.cripto.R;
 
 import activities.SplashActivity;
-import activities.criptomonedas.CriptomonedasActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,9 +19,9 @@ public class FavoritasActivity extends AppCompatActivity implements View.OnClick
 
         FavoritasFragment favoritasFragment = new FavoritasFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.contenedor, favoritasFragment);
+        getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmentos, favoritasFragment);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.contenedor, favoritasFragment);
+        transaction.replace(R.id.contenedorFragmentos, favoritasFragment);
         transaction.commit();
 
         Intent intent = new Intent(FavoritasActivity.this, SplashActivity.class);

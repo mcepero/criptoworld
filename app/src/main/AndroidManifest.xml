@@ -20,10 +20,6 @@
         </activity>
         <activity
             android:configChanges="orientation"
-            android:name="activities.criptomonedas.CriptomonedasActivity">
-        </activity>
-        <activity
-            android:configChanges="orientation"
             android:name="activities.exchanges.ExchangesActivity">
         </activity>
         <activity

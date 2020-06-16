@@ -106,7 +106,8 @@ public class CriptomonedaAdapter extends RecyclerView.Adapter<CriptomonedaAdapte
 
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
 
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, criptomonedasDetallesFragment).addToBackStack(null).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragmentos, criptomonedasDetallesFragment).addToBackStack(null).commit();
+
                 }
             });
         }

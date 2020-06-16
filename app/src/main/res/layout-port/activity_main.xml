@@ -72,8 +72,8 @@
         </LinearLayout>
     </ScrollView>
     <FrameLayout
+        android:id="@+id/contenedorFragmentos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/container"></FrameLayout>
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

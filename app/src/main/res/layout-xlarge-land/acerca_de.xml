@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/cabeceraAcercaDe"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="70dp"
         android:text="@string/acercaDe"
         android:textAlignment="center"
         android:textColor="#033076"
@@ -21,12 +21,13 @@
         android:layout_width="350dp"
         android:layout_height="300dp"
         android:background="#FAFAFA"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/informacionAcercaDe"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:text="CriptoWorld, 2020"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -37,6 +38,7 @@
         android:id="@+id/informacion2AcercaDe"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_marginTop="20dp"
         android:text="@string/desarrolladoPor"
         android:textAlignment="center"
         android:textColor="#000000"

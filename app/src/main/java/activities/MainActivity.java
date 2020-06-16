@@ -1,9 +1,8 @@
 package activities;
 
-import activities.criptomonedas.CriptomonedasActivity;
 import activities.criptomonedas.CriptomonedasFragment;
-import activities.exchanges.ExchangesActivity;
-import activities.favoritas.FavoritasActivity;
+import activities.exchanges.ExchangesFragment;
+import activities.favoritas.FavoritasFragment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -28,21 +27,45 @@ public class MainActivity extends AppCompatActivity {
         botonCriptomonedas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CriptomonedasActivity.class));
+                CriptomonedasFragment criptomonedasFragment = new CriptomonedasFragment();
+                SplashFragment splashFragment = new SplashFragment();
+
+                /*Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+                intent.putExtra("milisegundos", 5500);
+                startActivity(intent);*/
+
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.contenedorFragmentos, criptomonedasFragment).addToBackStack(MainActivity.class.getName())
+                        .commit();
+
+
+                /*getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmentos, criptomonedasFragment);
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.contenedorFragmentos, criptomonedasFragment);
+                transaction.commit();*/
+
             }
         });
 
         botonGuardadas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FavoritasActivity.class));
+                FavoritasFragment favoritasFragment = new FavoritasFragment();
+
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.contenedorFragmentos, favoritasFragment).addToBackStack(MainActivity.class.getName())
+                        .commit();
             }
         });
 
         botonExchanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ExchangesActivity.class));
+                ExchangesFragment exchangesFragment = new ExchangesFragment();
+
+                getSupportFragmentManager().beginTransaction().
+                        replace(R.id.contenedorFragmentos, exchangesFragment).addToBackStack(MainActivity.class.getName())
+                        .commit();
             }
         });
 

@@ -68,6 +68,7 @@ public class CriptomonedasFragment extends Fragment {
 
         adapter = new CriptomonedaAdapter(getContext(), listaMonedas);
         recyclerView.setAdapter(adapter);
+
         return view;
     }
 

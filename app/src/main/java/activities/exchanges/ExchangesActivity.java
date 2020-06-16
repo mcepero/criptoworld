@@ -2,12 +2,10 @@ package activities.exchanges;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.manuelcepero.cripto.R;
 
 import activities.SplashActivity;
-import activities.criptomonedas.CriptomonedasActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -20,9 +18,9 @@ public class ExchangesActivity extends AppCompatActivity{
 
         ExchangesFragment exchangesFragment = new ExchangesFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.contenedor, exchangesFragment);
+        getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmentos, exchangesFragment);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.contenedor, exchangesFragment);
+        transaction.replace(R.id.contenedorFragmentos, exchangesFragment);
         transaction.commit();
 
         Intent intent = new Intent(ExchangesActivity.this, SplashActivity.class);

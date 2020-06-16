@@ -2,7 +2,8 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/cardview_light_background">
 
     <TextView
         android:id="@+id/cabeceraExchanges"
@@ -21,4 +22,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="80dp">
     </androidx.recyclerview.widget.RecyclerView>
+    <FrameLayout
+        android:id="@+id/contenedorFragmentos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </RelativeLayout>

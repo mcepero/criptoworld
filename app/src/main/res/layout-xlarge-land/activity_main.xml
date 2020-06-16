@@ -1,83 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A1142"
-    tools:context="activities.MainActivity">
+    android:weightSum="2"
+    android:background="#0A1142">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        <LinearLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="match_parent" />
 
-
-            <ImageView
-                android:id="@+id/logo"
+        <FrameLayout
+            android:id="@+id/menuFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
-                app:srcCompat="@drawable/logo" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
 
-            <Button
-                android:id="@+id/criptomonedas"
-                android:layout_width="420dp"
-                android:layout_height="140dp"
-                android:layout_alignBottom="@+id/logo"
-                android:background="@drawable/button_bordes"
-                android:text="@string/criptomonedas"
-                android:textColor="#0A1142"
-                android:layout_marginTop="50dp"
-                android:textSize="35sp">
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="196dp"
+                    app:srcCompat="@drawable/logo" />
 
-            </Button>
+                <Button
+                    android:id="@+id/criptomonedas"
+                    android:layout_width="260dp"
+                    android:layout_height="85dp"
+                    android:layout_alignBottom="@+id/logo"
+                    android:background="@drawable/button_bordes"
+                    android:text="@string/criptomonedas"
+                    android:textColor="#0A1142"
+                    android:textSize="24sp">
 
-            <Button
-                android:id="@+id/exchanges"
-                android:layout_width="420dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/button_bordes"
-                android:text="Exchanges"
-                android:textColor="#0A1142"
-                android:textSize="35sp">
+                </Button>
 
-            </Button>
+                <Button
+                    android:id="@+id/exchanges"
+                    android:layout_width="260dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_bordes"
+                    android:text="Exchanges"
+                    android:textColor="#0A1142"
+                    android:textSize="24sp">
 
-            <Button
-                android:id="@+id/guardadas"
-                android:layout_width="420dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/button_bordes"
-                android:text="@string/guardadas"
-                android:textColor="#0A1142"
-                android:textSize="35sp" />
+                </Button>
 
-            <Button
-                android:id="@+id/acercade"
-                android:layout_width="420dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/button_bordes"
-                android:text="@string/acercaDe"
-                android:textColor="#0A1142"
-                android:textSize="35sp" />
+                <Button
+                    android:id="@+id/guardadas"
+                    android:layout_width="260dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_bordes"
+                    android:text="@string/guardadas"
+                    android:textColor="#0A1142"
+                    android:textSize="24sp" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/acercade"
+                    android:layout_width="260dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/button_bordes"
+                    android:text="@string/acercaDe"
+                    android:textColor="#0A1142"
+                    android:textSize="24sp" />
 
-    </ScrollView>
+            </LinearLayout>
 
+        </FrameLayout>
+
+    </RelativeLayout>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:id="@+id/contenedorFragmentos"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:id="@+id/container"></FrameLayout>
+        android:layout_weight="1"
+        android:background="@color/cardview_light_background" />
 
-</RelativeLayout>
+</LinearLayout>

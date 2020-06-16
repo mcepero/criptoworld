@@ -82,7 +82,7 @@ public class ExchangeAdapter extends RecyclerView.Adapter<ExchangeAdapter.ViewHo
 
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
 
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, exchangeDetallesFragment).addToBackStack(null).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragmentos, exchangeDetallesFragment).addToBackStack(null).commit();
                 }
             });
         }
